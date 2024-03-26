@@ -1,0 +1,20 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {},
+    "ghcr.io/devcontainers-contrib/features/homebrew-package:1": {}
+  },
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "secrets": {
+          "permissions": "write-all"
+        },
+        "dotfiles": {
+          "permissions": "write-all"
+        }
+      }
+    }
+  }
+}
