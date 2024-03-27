@@ -1,14 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/universal
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "name": "NSankaDev",
+  "dockerComposeFile": "docker-compose.yml",
+	"service": "codespace",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/devcontainers/features/terraform:1": {},
     "ghcr.io/devcontainers-contrib/features/homebrew-package:1": {}
   },
+
+  // Configure tool-specific properties.
   "customizations": {
+    // Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": []
+		},
+
     "codespaces": {
       "repositories": {
-        "secrets": {
+        "secret": {
           "permissions": "write-all"
         },
         "dotfiles": {
@@ -16,5 +31,14 @@
         }
       }
     }
-  }
+  },
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	//"postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "codespace"
 }
