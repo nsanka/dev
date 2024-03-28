@@ -21,9 +21,9 @@ RUN bash -c "conda update -y -n base -c defaults conda \
     && conda config --set channel_priority flexible"
 
 # Create New Conda Environment
-RUN bash -c "conda create -y --name py39 python=3.9 \
-    # Install Conda Packages
-    && conda install -y -n py39 pylint pandas jupyter plotly matplotlib seaborn scikit-learn"
+#RUN bash -c "conda create -y --name py39 python=3.9 \
+# Install Conda Packages
+#    && conda install -y -n py39 pylint pandas jupyter plotly matplotlib seaborn scikit-learn"
 
 # Switch back to root
 USER root
