@@ -1,5 +1,4 @@
 FROM mcr.microsoft.com/devcontainers/universal:2
-#FROM mcr.microsoft.com/vscode/devcontainers/universal:2-linux
 
 # Update
 RUN apt-get update
