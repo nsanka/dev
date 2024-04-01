@@ -6,6 +6,7 @@ RUN apt-get update
 # Install VSCode
 RUN curl -sSL https://update.code.visualstudio.com/1.87.2/linux-x64/stable > vscode.tar.gz && \
     tar -xzf vscode.tar.gz && \
+    rm -rf vscode.tar.gz && \
     mv VSCode-linux-x64 /opt/vscode
 ENV PATH=/opt/vscode/bin:$PATH
 
