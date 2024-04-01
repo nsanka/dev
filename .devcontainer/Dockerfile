@@ -7,6 +7,12 @@ RUN apt-get update
 USER codespace
 ENV HOME=/home/codespace
 
+# Install VSCode
+RUN curl -sSL https://update.code.visualstudio.com/1.87.2/linux-x64/stable > vscode.tar.gz && \
+  tar -xzf vscode.tar.gz && \
+  mv VSCode-linux-x64 /opt/vscode
+ENV PATH=/opt/vscode/bin:$PATH
+
 # Install informative git for bash
 RUN git clone https://github.com/magicmonty/bash-git-prompt.git $HOME/.bash-git-prompt --depth=1
 
